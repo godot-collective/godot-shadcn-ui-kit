@@ -1,0 +1,1294 @@
+[gd_scene load_steps=25 format=3]
+
+[ext_resource type="Script" path="res://gallery_static.gd" id="1_script"]
+[ext_resource type="Theme" path="res://shadcn_dark_theme.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.0588235, 0.0588235, 0.0627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_surface"]
+bg_color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.207843, 0.231373, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_surface8"]
+bg_color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.207843, 0.231373, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_surface10"]
+bg_color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.207843, 0.231373, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_surface16"]
+bg_color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.207843, 0.231373, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_normal"]
+bg_color = Color(0.980392, 0.980392, 0.980392, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.980392, 0.980392, 0.980392, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_pressed"]
+bg_color = Color(0.831373, 0.831373, 0.831373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.831373, 0.831373, 0.831373, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_normal"]
+bg_color = Color(0.101961, 0.101961, 0.105882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_hover"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_primary_normal"]
+bg_color = Color(0.980392, 0.980392, 0.980392, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.980392, 0.980392, 0.980392, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_primary_hover"]
+bg_color = Color(0.898039, 0.898039, 0.898039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.898039, 0.898039, 0.898039, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+bg_color = Color(0.639216, 0.639216, 0.639216, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avatar_a"]
+bg_color = Color(0.419608, 0.447059, 0.501961, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avatar_b"]
+bg_color = Color(0.611765, 0.639216, 0.686275, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avatar_c"]
+bg_color = Color(0.819608, 0.835294, 0.858824, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spinner"]
+bg_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chip_normal"]
+bg_color = Color(0.0784314, 0.0784314, 0.0823529, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chip_hover"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chip_active_normal"]
+bg_color = Color(0.117647, 0.117647, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.231373, 0.509804, 0.964706, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chip_active_hover"]
+bg_color = Color(0.113725, 0.305882, 0.847059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.231373, 0.509804, 0.964706, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clear"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
+bg_color = Color(0.898039, 0.898039, 0.898039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.898039, 0.898039, 0.898039, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+
+[node name="GalleryStatic" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+theme = ExtResource("2_theme")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0352941, 0.0352941, 0.0431373, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="PaymentCard" type="PanelContainer" parent="Scroll/Grid"]
+custom_minimum_size = Vector2(360, 680)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Margin" type="MarginContainer" parent="Scroll/Grid/PaymentCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Body" type="VBoxContainer" parent="Scroll/Grid/PaymentCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 28
+text = "Payment Method"
+
+[node name="Subtitle" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "All transactions are secure and encrypted"
+
+[node name="NameLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Name on Card"
+
+[node name="NameInput" type="LineEdit" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "John Doe"
+
+[node name="CardRow" type="HBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CardWrap" type="VBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="CardNumberLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow/CardWrap"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Card Number"
+
+[node name="CardNumberInput" type="LineEdit" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow/CardWrap"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "1234 5678 9012 3456"
+
+[node name="CvvWrap" type="VBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="CvvLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow/CvvWrap"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "CVV"
+
+[node name="CvvInput" type="LineEdit" parent="Scroll/Grid/PaymentCard/Margin/Body/CardRow/CvvWrap"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "123"
+
+[node name="Hint" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Enter your 16-digit number."
+
+[node name="MonthYearRow" type="HBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MonthWrap" type="VBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="MonthLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow/MonthWrap"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Month"
+
+[node name="MonthInput" type="OptionButton" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow/MonthWrap"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="YearWrap" type="VBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="YearLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow/YearWrap"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Year"
+
+[node name="YearInput" type="OptionButton" parent="Scroll/Grid/PaymentCard/Margin/Body/MonthYearRow/YearWrap"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sep1" type="HSeparator" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+
+[node name="BillingLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Billing Address"
+
+[node name="BillingHint" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "The billing address associated with your payment method"
+
+[node name="SameShipping" type="CheckBox" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+button_pressed = true
+text = "Same as shipping address"
+
+[node name="Sep2" type="HSeparator" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+
+[node name="CommentsLabel" type="Label" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Comments"
+
+[node name="Comments" type="TextEdit" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+placeholder_text = "Add any additional comments"
+
+[node name="ActionRow" type="HBoxContainer" parent="Scroll/Grid/PaymentCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Submit" type="Button" parent="Scroll/Grid/PaymentCard/Margin/Body/ActionRow"]
+layout_mode = 2
+text = "Submit"
+theme_override_colors/font_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_pressed_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_primary_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+
+[node name="Cancel" type="Button" parent="Scroll/Grid/PaymentCard/Margin/Body/ActionRow"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="TeamCard" type="PanelContainer" parent="Scroll/Grid"]
+custom_minimum_size = Vector2(360, 680)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Margin" type="MarginContainer" parent="Scroll/Grid/TeamCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Body" type="VBoxContainer" parent="Scroll/Grid/TeamCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 28
+text = "Collaboration"
+
+[node name="Avatars" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = -8
+
+[node name="Avatar1" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body/Avatars"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avatar_a")
+
+[node name="Avatar2" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body/Avatars"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avatar_b")
+
+[node name="Avatar3" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body/Avatars"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avatar_c")
+
+[node name="NoMembers" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 30
+text = "No Team Members"
+
+[node name="InviteHint" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Invite your team to collaborate on this project."
+
+[node name="Invite" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "+ Invite Members"
+theme_override_colors/font_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_pressed_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_primary_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+
+[node name="StatusRow" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Syncing" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/StatusRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Syncing"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Updating" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/StatusRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Updating"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Loading" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/StatusRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Loading"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="InputRow" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Plus" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/InputRow"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "+"
+
+[node name="MessageInput" type="LineEdit" parent="Scroll/Grid/TeamCard/Margin/Body/InputRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Send a message..."
+
+[node name="PriceLabel" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Price Range"
+
+[node name="PriceHint" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Set your budget range ($200 - 800)."
+
+[node name="PriceSlider" type="HSlider" parent="Scroll/Grid/TeamCard/Margin/Body"]
+layout_mode = 2
+max_value = 100.0
+value = 78.0
+
+[node name="SearchPanel" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface8")
+
+[node name="SearchRow" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body/SearchPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SearchIcon" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/SearchPanel/SearchRow"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "⌕"
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_icon_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_hover")
+
+[node name="SearchInput" type="LineEdit" parent="Scroll/Grid/TeamCard/Margin/Body/SearchPanel/SearchRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search..."
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_clear")
+
+[node name="Results" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body/SearchPanel/SearchRow"]
+layout_mode = 2
+autowrap_mode = 0
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 18
+text = "12 results"
+
+[node name="UrlPanel" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface8")
+
+[node name="UrlRow" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body/UrlPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="UrlInput" type="LineEdit" parent="Scroll/Grid/TeamCard/Margin/Body/UrlPanel/UrlRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "https://example.com"
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_clear")
+
+[node name="Info" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body/UrlPanel/UrlRow"]
+layout_mode = 2
+autowrap_mode = 0
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 20
+text = "ⓘ"
+
+[node name="ComposerPanel" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface10")
+
+[node name="ComposerBody" type="VBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ComposerInput" type="TextEdit" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Ask, Search or Chat..."
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_clear")
+
+[node name="ComposerFooter" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FooterPlus" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "+"
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_icon_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_icon_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_hover")
+
+[node name="Auto" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+layout_mode = 2
+autowrap_mode = 0
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Auto"
+
+[node name="Spacer" type="Control" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Used" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+layout_mode = 2
+autowrap_mode = 0
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "52% used"
+
+[node name="Divider" type="VSeparator" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+custom_minimum_size = Vector2(8, 24)
+layout_mode = 2
+
+[node name="Send" type="Button" parent="Scroll/Grid/TeamCard/Margin/Body/ComposerPanel/ComposerBody/ComposerFooter"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "↑"
+theme_override_colors/font_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_pressed_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_icon_primary_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_icon_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_icon_primary_hover")
+
+[node name="MentionPanel" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface8")
+
+[node name="MentionRow" type="HBoxContainer" parent="Scroll/Grid/TeamCard/Margin/Body/MentionPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MentionInput" type="LineEdit" parent="Scroll/Grid/TeamCard/Margin/Body/MentionPanel/MentionRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "@shadcn"
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clear")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_clear")
+
+[node name="Check" type="PanelContainer" parent="Scroll/Grid/TeamCard/Margin/Body/MentionPanel/MentionRow"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="CheckLabel" type="Label" parent="Scroll/Grid/TeamCard/Margin/Body/MentionPanel/MentionRow/Check"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 16
+text = "✓"
+
+[node name="SettingsCard" type="PanelContainer" parent="Scroll/Grid"]
+custom_minimum_size = Vector2(360, 680)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Margin" type="MarginContainer" parent="Scroll/Grid/SettingsCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Body" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 28
+text = "System Settings"
+
+[node name="UrlRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="UrlInput" type="LineEdit" parent="Scroll/Grid/SettingsCard/Margin/Body/UrlRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "https://"
+
+[node name="Star" type="Button" parent="Scroll/Grid/SettingsCard/Margin/Body/UrlRow"]
+layout_mode = 2
+text = "☆"
+
+[node name="TfaPanel" type="PanelContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface10")
+
+[node name="TfaRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TfaText" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel/TfaRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TfaTitle" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel/TfaRow/TfaText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 16
+text = "Two-factor authentication"
+
+[node name="TfaDesc" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel/TfaRow/TfaText"]
+layout_mode = 2
+autowrap_mode = 0
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 13
+text = "Verify via email or phone number."
+
+[node name="TfaSpacer" type="Control" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel/TfaRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Enable" type="Button" parent="Scroll/Grid/SettingsCard/Margin/Body/TfaPanel/TfaRow"]
+custom_minimum_size = Vector2(92, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Enable"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_hover_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_pressed_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_primary_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+
+[node name="Verified" type="Button" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+alignment = 0
+size_flags_horizontal = 3
+text = "Your profile has been verified."
+
+[node name="SepA" type="HSeparator" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+
+[node name="Appearance" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Appearance Settings"
+
+[node name="ComputeLabel" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Compute Environment"
+
+[node name="ComputeHint" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Select the compute environment for your cluster."
+
+[node name="OptionOne" type="PanelContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface")
+
+[node name="OptionOneRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="OptionOneText" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne/OptionOneRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OptionOneTitle" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne/OptionOneRow/OptionOneText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Kubernetes"
+
+[node name="OptionOneDesc" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne/OptionOneRow/OptionOneText"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Run GPU workloads on a configured cluster."
+
+[node name="OptionOneSpacer" type="Control" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne/OptionOneRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionOneCheck" type="CheckBox" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionOne/OptionOneRow"]
+layout_mode = 2
+button_pressed = true
+text = ""
+
+[node name="OptionTwo" type="PanelContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface")
+
+[node name="OptionTwoRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="OptionTwoText" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo/OptionTwoRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OptionTwoTitle" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo/OptionTwoRow/OptionTwoText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Virtual Machine"
+
+[node name="OptionTwoDesc" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo/OptionTwoRow/OptionTwoText"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Access VM workloads. (Coming soon)"
+
+[node name="OptionTwoSpacer" type="Control" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo/OptionTwoRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionTwoCheck" type="CheckBox" parent="Scroll/Grid/SettingsCard/Margin/Body/OptionTwo/OptionTwoRow"]
+layout_mode = 2
+button_pressed = false
+text = ""
+
+[node name="SepB" type="HSeparator" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+
+[node name="GpuRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GpuText" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/GpuRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="GpuLabel" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/GpuRow/GpuText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Number of GPUs"
+
+[node name="GpuHint" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/GpuRow/GpuText"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "You can add more later."
+
+[node name="GpuSpacer" type="Control" parent="Scroll/Grid/SettingsCard/Margin/Body/GpuRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GpuSpin" type="SpinBox" parent="Scroll/Grid/SettingsCard/Margin/Body/GpuRow"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 16.0
+step = 1.0
+value = 8.0
+
+[node name="SepC" type="HSeparator" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+
+[node name="TintRow" type="HBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body"]
+layout_mode = 2
+
+[node name="TintText" type="VBoxContainer" parent="Scroll/Grid/SettingsCard/Margin/Body/TintRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TintLabel" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/TintRow/TintText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "Wallpaper Tinting"
+
+[node name="TintHint" type="Label" parent="Scroll/Grid/SettingsCard/Margin/Body/TintRow/TintText"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Allow the wallpaper to be tinted."
+
+[node name="TintSpacer" type="Control" parent="Scroll/Grid/SettingsCard/Margin/Body/TintRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TintToggle" type="CheckBox" parent="Scroll/Grid/SettingsCard/Margin/Body/TintRow"]
+layout_mode = 2
+button_pressed = true
+text = ""
+
+[node name="AssistantCard" type="PanelContainer" parent="Scroll/Grid"]
+custom_minimum_size = Vector2(360, 680)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Margin" type="MarginContainer" parent="Scroll/Grid/AssistantCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Body" type="VBoxContainer" parent="Scroll/Grid/AssistantCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 28
+text = "Assistant"
+
+[node name="Prompt" type="TextEdit" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+placeholder_text = "Ask, search, or make anything..."
+
+[node name="ActionRow" type="HBoxContainer" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Archive" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ActionRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Archive"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Report" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ActionRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Report"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Snooze" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ActionRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Snooze"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="More" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ActionRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "..."
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Agree" type="CheckBox" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+button_pressed = true
+text = "I agree to the terms and conditions"
+
+[node name="PagerRow" type="HBoxContainer" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Page1" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "1"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Page2" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "2"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_active_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_active_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_active_hover")
+
+[node name="Page3" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "3"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Prev" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "←"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="Next" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "→"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="PagerSpacer" type="Control" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Source" type="OptionButton" parent="Scroll/Grid/AssistantCard/Margin/Body/PagerRow"]
+layout_mode = 2
+
+[node name="SepMain" type="HSeparator" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+
+[node name="Question" type="Label" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_font_sizes/font_size = 18
+text = "How did you hear about us?"
+
+[node name="QuestionHint" type="Label" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Select the option that best describes how you found us."
+
+[node name="ChipRow1" type="HBoxContainer" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ChipA" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ChipRow1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Social Media"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_active_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_active_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_active_hover")
+
+[node name="ChipB" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ChipRow1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Search Engine"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="ChipRow2" type="HBoxContainer" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ChipC" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ChipRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Referral"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="ChipD" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/ChipRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Other"
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_chip_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chip_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chip_hover")
+
+[node name="BodySpacer" type="Control" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadingPanel" type="PanelContainer" parent="Scroll/Grid/AssistantCard/Margin/Body"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_surface16")
+
+[node name="LoadingBody" type="VBoxContainer" parent="Scroll/Grid/AssistantCard/Margin/Body/LoadingPanel"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 10
+
+[node name="Spinner" type="PanelContainer" parent="Scroll/Grid/AssistantCard/Margin/Body/LoadingPanel/LoadingBody"]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_spinner")
+
+[node name="ProcessingTitle" type="Label" parent="Scroll/Grid/AssistantCard/Margin/Body/LoadingPanel/LoadingBody"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+theme_override_font_sizes/font_size = 30
+text = "Processing your request"
+
+[node name="ProcessingHint" type="Label" parent="Scroll/Grid/AssistantCard/Margin/Body/LoadingPanel/LoadingBody"]
+layout_mode = 2
+autowrap_mode = 3
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.639216, 0.639216, 0.639216, 1)
+theme_override_font_sizes/font_size = 16
+text = "Please wait while we process your request."
+
+[node name="Cancel" type="Button" parent="Scroll/Grid/AssistantCard/Margin/Body/LoadingPanel/LoadingBody"]
+layout_mode = 2
+text = "Cancel"
