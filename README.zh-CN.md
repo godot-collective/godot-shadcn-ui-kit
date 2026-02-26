@@ -34,6 +34,13 @@
 3. 在编辑器中打开 `demo/main_static.tscn`，编辑静态版本。
 4. 打开 `demo/chat_ui.tscn` 查看 AI 聊天 UX 场景。
 
+## 截图
+### Gallery 场景
+![Gallery 场景](docs/gallery.png)
+
+### AI Chat 场景
+![AI Chat 场景](docs/ai-chat.png)
+
 ## 运行时版与静态版
 - 运行时主实现：`demo/gallery.gd`
 - 可编辑静态镜像：`demo/main_static.tscn`

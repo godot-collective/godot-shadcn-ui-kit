@@ -34,6 +34,13 @@ A dark, shadcn-inspired Godot UI demo with two synchronized implementations:
 3. Open `demo/main_static.tscn` to edit the static version in the editor.
 4. Open `demo/chat_ui.tscn` for the AI chat UX scene.
 
+## Screenshots
+### Gallery Scene
+![Gallery Scene](docs/gallery.png)
+
+### AI Chat Scene
+![AI Chat Scene](docs/ai-chat.png)
+
 ## Runtime vs Static
 - Runtime source of truth: `demo/gallery.gd`
 - Editable mirror: `demo/main_static.tscn`
