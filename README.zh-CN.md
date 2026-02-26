@@ -32,6 +32,7 @@
 1. 使用 Godot 4.6（或兼容 4.x）打开 `demo/project.godot`。
 2. 运行项目，查看运行时代码版 UI（`main.tscn`）。
 3. 在编辑器中打开 `demo/main_static.tscn`，编辑静态版本。
+4. 打开 `demo/chat_ui.tscn` 查看 AI 聊天 UX 场景。
 
 ## 运行时版与静态版
 - 运行时主实现：`demo/gallery.gd`

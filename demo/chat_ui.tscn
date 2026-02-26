@@ -1,0 +1,269 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://chat_ui.gd" id="1_script"]
+[ext_resource type="Theme" path="res://shadcn_dark_theme.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frame"]
+bg_color = Color(0.0392157, 0.0392157, 0.0431373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.164706, 0.164706, 0.180392, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sidebar"]
+bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
+border_width_right = 1
+border_color = Color(0.145098, 0.145098, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_input"]
+bg_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.192157, 0.192157, 0.219608, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_topbar_button"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.207843, 0.207843, 0.235294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+
+[node name="ChatUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0313726, 0.0352941, 1)
+
+[node name="AppFrame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_frame")
+
+[node name="Body" type="HBoxContainer" parent="AppFrame"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sidebar" type="PanelContainer" parent="AppFrame/Body"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sidebar")
+
+[node name="SidebarMargin" type="MarginContainer" parent="AppFrame/Body/Sidebar"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="SidebarBody" type="VBoxContainer" parent="AppFrame/Body/Sidebar/SidebarMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AppTitle" type="Label" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "assistant-ui"
+
+[node name="NewThread" type="Button" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody"]
+layout_mode = 2
+text = "+  New Thread"
+theme_override_styles/normal = SubResource("StyleBoxFlat_topbar_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_topbar_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_topbar_button")
+
+[node name="Threads" type="VBoxContainer" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ThreadA" type="Button" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody/Threads"]
+layout_mode = 2
+text = "Understanding React Ho..."
+
+[node name="ThreadB" type="Button" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody/Threads"]
+layout_mode = 2
+text = "Weather Inquiry for San ..."
+
+[node name="ThreadC" type="Button" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody/Threads"]
+layout_mode = 2
+text = "Current Weather in San ..."
+
+[node name="SidebarSpacer" type="Control" parent="AppFrame/Body/Sidebar/SidebarMargin/SidebarBody"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainArea" type="VBoxContainer" parent="AppFrame/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="TopBar" type="HBoxContainer" parent="AppFrame/Body/MainArea"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LeftActions" type="HBoxContainer" parent="AppFrame/Body/MainArea/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuButton" type="Button" parent="AppFrame/Body/MainArea/TopBar/LeftActions"]
+layout_mode = 2
+text = "[]"
+
+[node name="ModelSelect" type="OptionButton" parent="AppFrame/Body/MainArea/TopBar/LeftActions"]
+custom_minimum_size = Vector2(220, 34)
+layout_mode = 2
+
+[node name="TopSpacer" type="Control" parent="AppFrame/Body/MainArea/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShareButton" type="Button" parent="AppFrame/Body/MainArea/TopBar"]
+layout_mode = 2
+text = "^"
+
+[node name="MainBody" type="MarginContainer" parent="AppFrame/Body/MainArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Scroll" type="ScrollContainer" parent="AppFrame/Body/MainArea/MainBody"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Center" type="CenterContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="TopSpace" type="Control" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Conversation" type="VBoxContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 10
+
+[node name="WelcomeBlock" type="VBoxContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/WelcomeBlock"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Hello there!"
+
+[node name="Subtitle" type="Label" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/WelcomeBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.631373, 0.631373, 0.666667, 1)
+theme_override_font_sizes/font_size = 28
+text = "How can I help you today?"
+
+[node name="SuggestionFlow" type="HFlowContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+
+[node name="SuggestionA" type="Button" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/SuggestionFlow"]
+layout_mode = 2
+text = "What's the weather\nin San Francisco?"
+
+[node name="SuggestionB" type="Button" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/SuggestionFlow"]
+layout_mode = 2
+text = "Explain React hooks\nlike useState and useEffect"
+
+[node name="InputPanel" type="PanelContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_input")
+
+[node name="InputMargin" type="MarginContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="InputBody" type="VBoxContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MessageInput" type="TextEdit" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin/InputBody"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 2
+placeholder_text = "Send a message..."
+
+[node name="InputFooter" type="HBoxContainer" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin/InputBody"]
+layout_mode = 2
+
+[node name="AttachButton" type="Button" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin/InputBody/InputFooter"]
+layout_mode = 2
+text = "+"
+
+[node name="FooterSpacer" type="Control" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin/InputBody/InputFooter"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SendButton" type="Button" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content/InputPanel/InputMargin/InputBody/InputFooter"]
+layout_mode = 2
+text = "^"
+
+[node name="BottomGap" type="Control" parent="AppFrame/Body/MainArea/MainBody/Scroll/Center/Content"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2

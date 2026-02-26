@@ -32,6 +32,7 @@ A dark, shadcn-inspired Godot UI demo with two synchronized implementations:
 1. Open `demo/project.godot` with Godot 4.6 (or compatible 4.x).
 2. Run the project to preview runtime-generated UI (`main.tscn`).
 3. Open `demo/main_static.tscn` to edit the static version in the editor.
+4. Open `demo/chat_ui.tscn` for the AI chat UX scene.
 
 ## Runtime vs Static
 - Runtime source of truth: `demo/gallery.gd`
